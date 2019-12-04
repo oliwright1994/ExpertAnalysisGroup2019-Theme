@@ -24,7 +24,7 @@ function sassToCss() {
   return gulp
     .src("sass/main.scss")
     .pipe(sass({ outputStyle: "compressed" }))
-    .pipe(concat("styles.css"))
+    .pipe(concat("main.css"))
     .pipe(gulp.dest("./css"));
 }
 

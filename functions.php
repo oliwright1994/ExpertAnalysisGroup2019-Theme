@@ -120,7 +120,7 @@ add_action( 'widgets_init', 'expertanalysisgroup2019_widgets_init' );
  * Enqueue scripts and styles.
  */
 function expertanalysisgroup2019_scripts() {
-	wp_enqueue_style( 'expertanalysisgroup2019-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'expertanalysisgroup2019-style', get_template_directory_uri().'/css/main.css' );
 
 	wp_enqueue_script( 'expertanalysisgroup2019-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
