@@ -1,0 +1,28 @@
+{
+  "name": "expertanalysisgroup2019",
+  "version": "1.0.0",
+  "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oliwright1994/ExpertAnalysisGroup2019-Theme.git"
+  },
+  "author": "Oli Wright",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oliwright1994/ExpertAnalysisGroup2019-Theme/issues"
+  },
+  "homepage": "https://github.com/oliwright1994/ExpertAnalysisGroup2019-Theme#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "node-sass": "^4.13.0"
+  }
+}
