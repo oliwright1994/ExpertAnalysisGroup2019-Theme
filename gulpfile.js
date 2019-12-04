@@ -32,6 +32,6 @@ function sassToCss() {
 gulp.task(
   "default",
   gulp.series(sassToCss, function() {
-    gulp.watch("sass/*.scss", sassToCss);
+    gulp.watch("sass/**/*.scss", sassToCss);
   })
 );

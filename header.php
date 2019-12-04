@@ -25,31 +25,26 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'expertanalysisgroup2019' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$expertanalysisgroup2019_description = get_bloginfo( 'description', 'display' );
-			if ( $expertanalysisgroup2019_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $expertanalysisgroup2019_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+	<?php
+			wp_nav_menu( array(
+				'theme_location' => 'nav-secondary',
+				'menu_id'        => 'nav-secondary',
+			) );
+			?>
+					<nav id="site-navigation" class="main-navigation">
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'expertanalysisgroup2019' ); ?></button>
+		<div class="site-branding">
+		<!-- Include hard coded site logo to support css color properties -->
+		<a href="<?php echo get_home_url() ?>" class="site-logo">
+		<!-- <img src="<?php echo get_template_directory_uri()."/assets/svg/EAG_logo.svg" ?>" class="site-logo">-->
+<p>Expert Analysis Group</p>
+		</a>
+		</div><!-- .site-branding -->
+					<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'expertanalysisgroup2019' ); ?></button> -->
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
+				'menu_id'        => 'nav-primary',
 			) );
 			?>
 		</nav><!-- #site-navigation -->

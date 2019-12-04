@@ -1,1 +1,1 @@
-body{color:blue !important}
+#masthead{display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;width:100vw;height:80px;padding-bottom:10px}#masthead #site-navigation{flex-grow:1;width:inherit;display:flex;justify-content:space-between}#masthead #site-navigation .site-logo{color:#6e9cf6}.menu{display:flex;justify-content:flex-end}.menu li{display:inline;margin:0 0.5rem}.menu li a{color:#6e9cf6}a{color:#121212;text-decoration:none}body{margin:0}

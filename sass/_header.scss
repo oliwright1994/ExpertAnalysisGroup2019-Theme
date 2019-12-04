@@ -1,0 +1,30 @@
+#masthead {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100vw;
+  height: 80px;
+  padding-bottom: 10px;
+  #site-navigation {
+    flex-grow: 1;
+    width: inherit;
+    display: flex;
+    justify-content: space-between;
+    .site-logo {
+      color: $colour_brand_blue;
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  li {
+    display: inline;
+    margin: 0 0.5rem;
+    a {
+      color: $colour_brand_blue;
+    }
+  }
+}
