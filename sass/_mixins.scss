@@ -1,0 +1,22 @@
+@mixin blue_underline {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  padding-top: 30px;
+  border-bottom: 2px solid $colour_brand_blue;
+  width: 2em;
+}
+
+@mixin text_body {
+  line-height: 2em;
+  text-align: center;
+}
+@mixin text_heading {
+  line-height: 1.5em;
+  text-align: center;
+}
+
+@mixin learn_more {
+  color: $colour_brand_blue;
+  font-weight: $font_weight_medium;
+}

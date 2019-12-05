@@ -1,4 +1,12 @@
 a {
   color: #121212;
   text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.learn-more {
+  @include learn_more;
+  margin-top: 3rem;
 }

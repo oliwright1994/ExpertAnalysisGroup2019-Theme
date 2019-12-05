@@ -1,0 +1,112 @@
+.hero-banner-wrapper {
+  height: 85vh;
+  width: 100%;
+  position: relative;
+  border-bottom: 10px solid #9b9b9b;
+  .hero-image-filter {
+    position: absolute;
+    background: rgba(32, 44, 75, 0.47);
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1 {
+      color: white;
+      font-size: 48px;
+      text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+#home-about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  margin: 6rem auto;
+  h1,
+  p {
+    text-align: center;
+  }
+  p {
+    line-height: 2em;
+  }
+  h1 {
+    margin: 0 0 4rem 0;
+    font-size: 3 * $font-size-base;
+    &:after {
+      @include blue_underline;
+    }
+  }
+}
+
+#home-section-1 {
+  background-size: cover;
+}
+.section-1-filter {
+  background: rgba(37, 53, 85, 0.5);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  padding: 5rem 0;
+  .section-1-content {
+    display: flex;
+    max-width: 900px;
+    min-height: 500px;
+    margin: 0 auto;
+    align-items: stretch;
+    .section-1-content-text {
+      flex: 1;
+      display: flex;
+      max-width: 50%;
+      flex-direction: column;
+      align-items: center;
+      background: #ffffff;
+      text-align: center;
+      padding: 10%;
+      h2 {
+        font-size: 32px;
+        &:after {
+          @include blue_underline;
+        }
+      }
+    }
+    .section-1-content-image {
+      flex: 1;
+      object-fit: cover;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+#home-section-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    margin: 6rem auto;
+    font-size: 32px;
+    &:after {
+      @include blue_underline;
+      width: 6rem;
+    }
+  }
+  img {
+    width: 100%;
+    max-height: 350px;
+  }
+  p {
+    @include text_body;
+    max-width: 900px;
+    margin: 4rem 0;
+  }
+  .learn-more {
+    margin-top: 2rem;
+  }
+}
