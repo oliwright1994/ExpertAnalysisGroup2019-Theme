@@ -50,11 +50,22 @@
 	</div>
 	</div><!-- .entry-content -->
 
+	<div id="home-section-3" style="background-image:  url('<?php echo get_field('section_3_background_image')['url']?>')">
+		<div class="section-3-filter">
+			<h2 class="section-3-title"><?php the_field('section_3_title') ?></h2>
+			<div class="section-3-filter-blue">
+				<p class="section-3-content"><?php the_field('section_3_content') ?></p>
+				<a class="learn-more-blue" href="<?php the_field('section_3_link') ?>"> Learn More</a>
+			</div>
+		</div>
+	</div>
+
 	<div id="home-reports">
 		<h2><?php the_field('reports_section_title') ?></h2>
 		<p><?php the_field('report_section_tagline') ?></p>
-		<div class="home-reports-categories-wrapper">
+		<div class="home-reports-categories-grid">
 		<?php
+		$shop_page_url = get_permalink( wc_get_page_id( 'shop' ) );
 		$args = array(
 					'taxonomy'     => 'product_cat',
 					'orderby'      => 'name',
@@ -62,14 +73,29 @@
 					'pad_counts'   => 0,
 					'hierarchical' => 0,
 					'title_li'     => '',
-					'hide_empty'   => 1
+					'hide_empty'   => 1,
 		);
-		$all_categories = get_categories( $args );
 
-		echo '<pre>';
+		$all_categories = get_terms( $args );
+		foreach($all_categories as $category){
+			$category_link = get_category_link($category );
+			$category_image = get_field('category_image',$category->taxonomy.'_'.$category->term_id );
+			?>
+				<a href="<?php echo $category_link  ?>" class="single-report-category-wrapper" style="background-image:  url('<?php echo $category_image['url']?>)">
+					<h3 class="home-reports-catgory">
+						<?php echo $category->name ?>
+					</h3>
+					<p class="home-reports-view-more">
+						View More
+					</p>
+				</a>
+			<?php
+		}
+			?>
+		<!-- echo '<pre>';
 		print_r($all_categories);
 		echo '</pre>';
-		?>
+		?> -->
 
 		</div>
 	</div>

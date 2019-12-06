@@ -18,6 +18,12 @@
       &:hover {
         text-decoration: none;
       }
+      svg {
+        path,
+        rect {
+          fill: $colour_brand_blue;
+        }
+      }
       p {
         margin: 12px 0;
       }

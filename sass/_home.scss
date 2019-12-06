@@ -76,8 +76,8 @@
     }
     .section-1-content-image {
       flex: 1;
-      object-fit: cover;
       img {
+        object-fit: cover;
         width: 100%;
         height: 100%;
       }
@@ -89,6 +89,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #f4fffd;
   h2 {
     margin: 6rem auto;
     font-size: 32px;
@@ -108,5 +109,100 @@
   }
   .learn-more {
     margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+}
+
+#home-reports {
+  margin-bottom: 8rem;
+  h2 {
+    margin: 5rem auto 3rem auto;
+    @include text_heading;
+    font-size: 32px;
+    &:after {
+      @include blue_underline;
+    }
+  }
+  & > p {
+    margin: 0 auto 4rem auto;
+  }
+}
+
+.home-reports-categories-grid {
+  display: grid;
+  margin: auto;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin-bottom: 4rem;
+  .single-report-category-wrapper {
+    background-size: cover;
+    min-height: 300px;
+    background: rgba(80, 80, 80, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+    min-height: 300px;
+    height: 100%;
+    text-decoration: none;
+
+    &:hover {
+      & > p {
+        max-height: 50%;
+        opacity: 1;
+        text-decoration: none;
+      }
+    }
+    h3 {
+      color: white;
+      text-decoration-color: white;
+    }
+    p {
+      color: white;
+      max-height: 0;
+      margin: 0;
+      transition: all 0.5s;
+      opacity: 0;
+      text-decoration-line: none;
+    }
+  }
+}
+
+#home-section-3 {
+  background-size: cover;
+  .section-3-filter {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8vw 5vw;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .section-3-title {
+      color: white;
+      margin-top: 0px;
+      margin-bottom: 3rem;
+      @include text_shadow_base;
+      &:after {
+        @include blue_underline;
+      }
+    }
+    .section-3-filter-blue {
+      background: rgba(56, 111, 164, 0.61);
+      flex: 1;
+      padding: 3% 5% 5% 5%;
+      .section-3-content {
+        color: white;
+      }
+    }
+    .learn-more-blue {
+      @include learn_more;
+      color: white;
+      text-align: center;
+      display: block;
+      text-decoration: underline;
+    }
   }
 }

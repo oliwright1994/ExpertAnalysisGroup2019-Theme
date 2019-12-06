@@ -36,8 +36,8 @@
 		<div class="site-branding">
 		<!-- Include hard coded site logo to support css color properties -->
 		<a href="<?php echo get_home_url() ?>" class="site-logo">
-		<!-- <img src="<?php echo get_template_directory_uri()."/assets/svg/EAG_logo.svg" ?>" class="site-logo">-->
-<p>Expert Analysis Group</p>
+		<?php echo file_get_contents(get_template_directory_uri()
+."/assets/svg/EAG_logo.svg"); ?>
 		</a>
 		</div><!-- .site-branding -->
 					<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'expertanalysisgroup2019' ); ?></button> -->
