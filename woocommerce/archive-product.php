@@ -18,7 +18,6 @@
 defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' );
-
 /**
  * Hook: woocommerce_before_main_content.
  *
@@ -26,9 +25,18 @@ get_header( 'shop' );
  * @hooked woocommerce_breadcrumb - 20
  * @hooked WC_Structured_Data::generate_website_data() - 30
  */
-do_action( 'woocommerce_before_main_content' );
+// do_action( 'woocommerce_before_main_content' );
+woocommerce_output_content_wrapper()
 
 ?>
+<div class="shop-layout-sidebar">
+<div class="shop-layout-sidebar-aside">
+	<?php
+woocommerce_breadcrumb();
+do_action( 'woocommerce_sidebar' );
+?>
+</div>
+	<div class="shop-sidebar-main">
 <header class="woocommerce-products-header">
 	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
@@ -54,7 +62,8 @@ if ( woocommerce_product_loop() ) {
 	 * @hooked woocommerce_result_count - 20
 	 * @hooked woocommerce_catalog_ordering - 30
 	 */
-	do_action( 'woocommerce_before_shop_loop' );
+ woocommerce_output_all_notices();
+ woocommerce_catalog_ordering();
 
 	woocommerce_product_loop_start();
 
@@ -88,6 +97,13 @@ if ( woocommerce_product_loop() ) {
 	do_action( 'woocommerce_no_products_found' );
 }
 
+echo '</div>';
+// shop-sidebar-main
+/**
+ * Hook: woocommerce_sidebar.
+ *
+ * @hooked woocommerce_get_sidebar - 10
+ */
 /**
  * Hook: woocommerce_after_main_content.
  *
@@ -95,11 +111,8 @@ if ( woocommerce_product_loop() ) {
  */
 do_action( 'woocommerce_after_main_content' );
 
-/**
- * Hook: woocommerce_sidebar.
- *
- * @hooked woocommerce_get_sidebar - 10
- */
-do_action( 'woocommerce_sidebar' );
-
+?>
+</div>
+<?php
 get_footer( 'shop' );
+?>

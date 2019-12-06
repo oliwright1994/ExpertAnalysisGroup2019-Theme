@@ -14,8 +14,9 @@
 
 get_header();
 ?>
-
 	<div id="primary" class="content-area">
+	<?php get_template_part( 'template-parts/content', 'page-banner' );?>
+
 		<main id="main" class="site-main">
 
 		<?php
@@ -36,5 +37,4 @@ get_header();
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

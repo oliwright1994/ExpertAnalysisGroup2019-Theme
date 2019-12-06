@@ -105,9 +105,18 @@ add_action( 'after_setup_theme', 'expertanalysisgroup2019_content_width', 0 );
  */
 function expertanalysisgroup2019_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'expertanalysisgroup2019' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'expertanalysisgroup2019' ),
+		'name'          => esc_html__( 'Shop Sidebar', 'expertanalysisgroup2019' ),
+		'id'            => 'sidebar-shop',
+		'description'   => esc_html__( 'Add widgets for the sidebar of the Shop section here.', 'expertanalysisgroup2019' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Site Footer', 'expertanalysisgroup2019' ),
+		'id'            => 'sidebar-footer',
+		'description'   => esc_html__( 'Add widgets for the site footer section here.', 'expertanalysisgroup2019' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -158,4 +167,12 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * Add WooCommerce functionality to theme to use WC template files instead of base files
+ */
+function eag_add_woocommerce_support() {
+	add_theme_support( 'woocommerce' );
+}
+add_action( 'after_setup_theme', 'eag_add_woocommerce_support' );
 
