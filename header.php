@@ -25,19 +25,28 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'expertanalysisgroup2019' ); ?></a>
 
 	<header id="masthead" class="site-header">
-	<?php
-			wp_nav_menu( array(
-				'theme_location' => 'nav-secondary',
-				'menu_id'        => 'nav-secondary',
-			) );
+		<div id="nav-secondary">
+		<?php
+		$cart_count = WC()->cart->get_cart_contents_count();
+		if($cart_count > 0) {
 			?>
-					<nav id="site-navigation" class="main-navigation">
+	<a class="cart-customlocation" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php echo 'Cart('.$cart_count.')'?></a>
+	<?php
+		}
+		if ( is_user_logged_in() ) { ?>
+			<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('My Account','woocommerce'); ?>"><?php _e('My Account','woocommerce'); ?></a>
+			<?php }
+			else { ?>
+			<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('Login / Register','woocommerce'); ?>"><?php _e('Login / Register','woocommerce'); ?></a>
+		 <?php } ?>
+		 <a class="contact-nav-link" href="<?php get_permalink(get_page_by_path( 'contact' ))?>">Contact</a>
+		</div>
 
+	<nav id="site-navigation" class="main-navigation">
 		<div class="site-branding">
 		<!-- Include hard coded site logo to support css color properties -->
 		<a href="<?php echo get_home_url() ?>" class="site-logo">
-		<?php echo file_get_contents(get_template_directory_uri()
-."/assets/svg/EAG_logo.svg"); ?>
+		<?php echo file_get_contents(get_template_directory_uri()."/assets/svg/EAG_logo.svg"); ?>
 		</a>
 		</div><!-- .site-branding -->
 					<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'expertanalysisgroup2019' ); ?></button> -->

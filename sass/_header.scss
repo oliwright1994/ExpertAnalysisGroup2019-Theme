@@ -34,6 +34,13 @@
 #nav-secondary {
   padding: 0 2% 0 2%;
   font-size: 14px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  a {
+    color: $colour_brand_blue;
+    margin: 0 0.5rem;
+  }
 }
 
 .menu {
