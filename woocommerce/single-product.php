@@ -18,7 +18,9 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
+?>
 
+<?php
 get_header( 'shop' ); ?>
 	<?php
 		/**
@@ -27,8 +29,17 @@ get_header( 'shop' ); ?>
 		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
 		 * @hooked woocommerce_breadcrumb - 20
 		 */
-		do_action( 'woocommerce_before_main_content' );
+		woocommerce_output_content_wrapper();
+
 	?>
+<div class="shop-layout-sidebar">
+<div class="shop-layout-sidebar-aside">
+	<?php
+woocommerce_breadcrumb();
+do_action( 'woocommerce_sidebar' );
+?>
+</div>
+<div class="shop-sidebar-main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
@@ -44,16 +55,7 @@ get_header( 'shop' ); ?>
 		 */
 		do_action( 'woocommerce_after_main_content' );
 	?>
-
-	<?php
-		/**
-		 * woocommerce_sidebar hook.
-		 *
-		 * @hooked woocommerce_get_sidebar - 10
-		 */
-		do_action( 'woocommerce_sidebar' );
-	?>
-
+</div>
 <?php get_footer( 'shop' );
 
 /* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */

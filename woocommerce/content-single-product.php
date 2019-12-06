@@ -24,7 +24,7 @@ global $product;
  *
  * @hooked wc_print_notices - 10
  */
-do_action( 'woocommerce_before_single_product' );
+
 
 if ( post_password_required() ) {
 	echo get_the_password_form(); // WPCS: XSS ok.
@@ -32,18 +32,42 @@ if ( post_password_required() ) {
 }
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
-
-	<?php
+<?php
+wc_print_notices()
 	/**
 	 * Hook: woocommerce_before_single_product_summary.
 	 *
 	 * @hooked woocommerce_show_product_sale_flash - 10
 	 * @hooked woocommerce_show_product_images - 20
 	 */
-	do_action( 'woocommerce_before_single_product_summary' );
+	?>
+	<?php
+		$abstract = $product->get_meta('eag_abstract');
+		$author = $product->get_meta('eag_author');
+		$institution = $product->get_meta('eag_institution');
 	?>
 
+
 	<div class="summary entry-summary">
+		<h2 class="single-product-title"><?php woocommerce_template_single_title(); ?></h2>
+		<p class="single-product-abstract <?php echo ($abstract)?'' :"missing-meta" ?>"><?php echo ($abstract)?$abstract :"There is no description for this report yet." ?></p>
+		<div classs="single-product-meta-wrapper">
+		<?php
+		if($author){
+			?>
+		<p class="single-product-author"><?php echo 'Author:'.$product->get_meta('eag_author')?></p>
+		<?php
+		}
+		?>
+		<?php
+		if($author){
+			?>
+		<p class="single-product-institution"><?php echo 'Institution:'.$product->get_meta('eag_institution')?></p>
+		<?php
+		}
+		woocommerce_template_single_meta();
+		?>
+		</div>
 		<?php
 		/**
 		 * Hook: woocommerce_single_product_summary.
@@ -57,7 +81,9 @@ if ( post_password_required() ) {
 		 * @hooked woocommerce_template_single_sharing - 50
 		 * @hooked WC_Structured_Data::generate_product_data() - 60
 		 */
-		do_action( 'woocommerce_single_product_summary' );
+		// do_action( 'woocommerce_single_product_summary' );
+		 woocommerce_template_single_price();
+		 woocommerce_template_single_add_to_cart();
 		?>
 	</div>
 
@@ -72,5 +98,6 @@ if ( post_password_required() ) {
 	do_action( 'woocommerce_after_single_product_summary' );
 	?>
 </div>
+	</div>
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
