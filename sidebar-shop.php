@@ -7,7 +7,7 @@
  * @package ExpertAnalysisGroup2019
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+if ( ! is_active_sidebar( 'sidebar-shop' ) ) {
 	return;
 }
 ?>

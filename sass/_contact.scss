@@ -1,0 +1,29 @@
+.wpcf7-form {
+  max-width: 900px;
+  margin: auto;
+  padding: 0 5%;
+  p {
+    text-align: left;
+  }
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    label {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: left;
+    }
+  }
+}
+
+.contact-layout-sidebar {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin: 0% 5%;
+}
+
+.wpcf7-textarea {
+  width: 100%;
+}

@@ -16,3 +16,9 @@ ul {
   padding-inline-start: 0;
   margin-inline-start: 0;
 }
+
+.blue-underline {
+  &:after {
+    @include blue_underline;
+  }
+}
