@@ -1,0 +1,58 @@
+.type-product {
+  padding: 5% 0 5% 0;
+  margin: 0 5%;
+  border-bottom: 1px solid $colour_light_grey;
+}
+
+.single-product-abstract,
+.single-product-author,
+.single-product-institution {
+  text-align: left;
+  line-height: 1.5em;
+}
+
+.single-product-meta-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+  font-size: 0.8rem;
+}
+
+.missing-meta {
+  font-style: italic;
+}
+.single-product-author-wrapper {
+  p {
+    margin: 0;
+    color: $colour_text_black;
+    font-weight: $font_weight_medium;
+  }
+}
+
+.single-product-price {
+  text-align: left;
+  font-weight: $font_weight_medium;
+  margin-bottom: 2rem;
+}
+
+.product_meta {
+  font-weight: $font_weight_medium;
+  a {
+    font-weight: $font_weight_light;
+    color: $colour_brand_blue;
+    text-decoration: underline;
+  }
+}
+
+.posted_in {
+  font-weight: $font_weight_medium;
+  color: $colour_text_black;
+  text-decoration: none;
+}
+
+.product-cta-message {
+  text-align: left;
+  a {
+    color: $colour_brand_blue;
+  }
+}

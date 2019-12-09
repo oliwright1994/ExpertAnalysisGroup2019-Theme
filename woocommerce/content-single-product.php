@@ -51,18 +51,20 @@ wc_print_notices()
 	<div class="summary entry-summary">
 		<h2 class="single-product-title"><?php woocommerce_template_single_title(); ?></h2>
 		<p class="single-product-abstract <?php echo ($abstract)?'' :"missing-meta" ?>"><?php echo ($abstract)?$abstract :"There is no description for this report yet." ?></p>
-		<div classs="single-product-meta-wrapper">
+		<div class="single-product-meta-wrapper">
+			<div class="single-product-author-wrapper">
 		<?php
 		if($author){
 			?>
-		<p class="single-product-author"><?php echo 'Author:'.$product->get_meta('eag_author')?></p>
+		<p class="single-product-author"><?php echo $author?></p>
 		<?php
 		}
 		?>
 		<?php
-		if($author){
+		if($institution){
 			?>
-		<p class="single-product-institution"><?php echo 'Institution:'.$product->get_meta('eag_institution')?></p>
+		<p class="single-product-institution"><?php echo $institution;?></p>
+		</div>
 		<?php
 		}
 		woocommerce_template_single_meta();
@@ -82,8 +84,27 @@ wc_print_notices()
 		 * @hooked WC_Structured_Data::generate_product_data() - 60
 		 */
 		// do_action( 'woocommerce_single_product_summary' );
-		 woocommerce_template_single_price();
-		 woocommerce_template_single_add_to_cart();
+		//  woocommerce_template_single_price();
+		echo '<p class="single-product-price">Price: '.wc_price( wc_get_price_to_display( $product, array( 'price' => $product->get_regular_price() ) ) )."</p>";
+
+		$current_user = wp_get_current_user();
+		$user_owns_product = wc_customer_bought_product( $current_user->user_email, $current_user->ID, $product->get_id() );
+
+		$product_cart_id = WC()->cart->generate_cart_id( $product->get_ID() );
+		$product_in_cart = WC()->cart->find_product_in_cart( $product_cart_id );
+
+		if ($user_owns_product){
+			?>
+			<p class="product-cta-message">You already own this product. View it in <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id'))?>">Your Account</a></p>
+			<?php
+		} elseif ($product_in_cart){
+			?>
+			<p class="product-cta-message">This item is already in your cart. <a href="<?php echo wc_get_cart_url() ?>">View Cart.</a></p>
+			<?php
+		}
+     else {
+			 woocommerce_template_single_add_to_cart();
+			}
 		?>
 	</div>
 

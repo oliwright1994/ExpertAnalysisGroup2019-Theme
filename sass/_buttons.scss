@@ -1,0 +1,14 @@
+button,
+.button {
+  background: $colour_brand_blue;
+  border-radius: 1px;
+  text-transform: uppercase;
+  font-weight: $font_weight_medium;
+  color: white;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.1s;
+  &:hover {
+    background: darken($colour_brand_blue, 7%);
+  }
+}

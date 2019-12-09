@@ -4,9 +4,15 @@
   align-items: stretch;
   justify-content: space-between;
   width: 100vw;
-  height: 80px;
+  height: 10vh;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(200, 200, 200, 0.5);
+  position: fixed;
+  padding-top: 10px;
+  top: 0;
+  z-index: 50;
+  background: white;
+  transition: all 0.5s;
   #site-navigation {
     font-size: 1rem;
     display: flex;
@@ -47,12 +53,33 @@
   display: flex;
   justify-content: flex-end;
   margin: 12px 0 0 0;
-
   li {
     display: inline;
     margin: 0 0.8rem;
     a {
       color: $colour_brand_blue;
+    }
+  }
+}
+
+#masthead.site-header-static {
+  background: transparent;
+  border: none;
+  #site-navigation {
+    .site-logo {
+      svg {
+        path,
+        rect {
+          fill: white;
+        }
+      }
+    }
+  }
+  div {
+    a {
+      // font-weight: $font_weight_medium;
+      @include text_shadow_base;
+      color: white;
     }
   }
 }

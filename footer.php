@@ -18,6 +18,7 @@
 		<?php get_current_template(true);?>
 	<?php dynamic_sidebar( 'sidebar-footer' ); ?>
 	</aside><!-- #secondary -->
+	<?php wp_footer(); ?>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

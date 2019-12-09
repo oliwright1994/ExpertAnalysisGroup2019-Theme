@@ -135,6 +135,8 @@ function expertanalysisgroup2019_scripts() {
 
 	wp_enqueue_script( 'expertanalysisgroup2019-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
+	wp_enqueue_script( 'expertanalysisgroup2019-header-toggle-styling', get_template_directory_uri() . '/js/toggle-header-styling.js', array(), '20151215', true );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

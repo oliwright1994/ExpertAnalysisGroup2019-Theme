@@ -10,3 +10,9 @@ a {
   @include learn_more;
   margin-top: 3rem;
 }
+
+ul {
+  list-style-type: none;
+  padding-inline-start: 0;
+  margin-inline-start: 0;
+}

@@ -1,0 +1,47 @@
+.entry-title {
+  text-align: center;
+  margin: 3rem;
+  font-size: 32px;
+}
+
+.woocommerce-cart-form {
+  padding: 0% 5% 0% 5%;
+}
+.woocommerce-cart-form__contents {
+  width: 100%;
+  border-spacing: 15px;
+
+  th {
+    text-align: left;
+  }
+  .remove {
+    fill: $colour_red;
+    height: 18px;
+    width: 18px;
+  }
+}
+
+.actions {
+  padding-top: 3rem;
+}
+
+.cart-collaterals {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 5%;
+}
+
+.wc-proceed-to-checkout {
+  margin: 2rem 0;
+}
+.cart_totals {
+  table {
+    border-spacing: 5px;
+  }
+}
+
+#page-cart {
+  margin-bottom: 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+}

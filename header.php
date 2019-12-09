@@ -39,7 +39,7 @@
 			else { ?>
 			<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('Login / Register','woocommerce'); ?>"><?php _e('Login / Register','woocommerce'); ?></a>
 		 <?php } ?>
-		 <a class="contact-nav-link" href="<?php get_permalink(get_page_by_path( 'contact' ))?>">Contact</a>
+		 <a class="contact-nav-link" href="<?php echo get_permalink(get_page_by_path( 'contact' ))?>">Contact</a>
 		</div>
 
 	<nav id="site-navigation" class="main-navigation">

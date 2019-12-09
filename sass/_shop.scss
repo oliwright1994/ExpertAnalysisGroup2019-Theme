@@ -1,4 +1,45 @@
 .shop-layout-sidebar {
   display: grid;
   grid-template-columns: 1fr 3fr;
+  .shop-sidebar-main {
+    padding-right: 5%;
+  }
+  .shop-layout-sidebar-aside {
+    margin: 1rem;
+  }
+}
+.type-product {
+  list-style-type: none;
+}
+
+.widget_product_categories {
+  margin-top: 3rem;
+  .widget-title {
+    font-size: 18px;
+  }
+}
+.product-categories {
+  padding-inline-start: 1rem;
+  li {
+    list-style-type: none;
+    margin: 0.5rem 0;
+    a {
+      font-size: 14px;
+    }
+  }
+}
+
+.woocommerce-products-header {
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 28px;
+  margin-top: 2rem;
+  h1 {
+    margin: 2rem 0 0 0;
+  }
+}
+
+.woocommerce-ordering {
+  display: flex;
+  justify-content: flex-end;
 }

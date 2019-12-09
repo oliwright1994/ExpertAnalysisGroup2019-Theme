@@ -65,7 +65,7 @@
 		<p><?php the_field('report_section_tagline') ?></p>
 		<div class="home-reports-categories-grid">
 		<?php
-		$shop_page_url = get_permalink( wc_get_page_id( 'shop' ) );
+		$catergory_uncategorized = get_term_by('slug', 'uncategorized', 'product_cat');
 		$args = array(
 					'taxonomy'     => 'product_cat',
 					'orderby'      => 'name',
@@ -73,7 +73,8 @@
 					'pad_counts'   => 0,
 					'hierarchical' => 0,
 					'title_li'     => '',
-					'hide_empty'   => 1,
+					'hide_empty'   => 0,
+					'exclude'      => $catergory_uncategorized->term_id,
 		);
 
 		$all_categories = get_terms( $args );

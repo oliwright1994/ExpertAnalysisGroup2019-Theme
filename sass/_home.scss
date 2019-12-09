@@ -1,6 +1,7 @@
 .hero-banner-wrapper {
-  height: 85vh;
+  height: 100vh;
   width: 100%;
+  margin-top: -10vh;
   position: relative;
   border-bottom: 10px solid #9b9b9b;
   .hero-image-filter {
@@ -181,6 +182,9 @@
       transition: all 0.3s;
       opacity: 0;
       text-decoration-line: none;
+      &:after {
+        @include right_arrow;
+      }
     }
   }
 }

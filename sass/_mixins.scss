@@ -16,9 +16,16 @@
   text-align: center;
 }
 
+@mixin right_arrow {
+  content: " \203A";
+  font-family: "Open Sans", arial, sans-serif;
+}
 @mixin learn_more {
   color: $colour_brand_blue;
   font-weight: $font_weight_medium;
+  &:after {
+    @include right_arrow;
+  }
 }
 
 @mixin text_shadow_base {
