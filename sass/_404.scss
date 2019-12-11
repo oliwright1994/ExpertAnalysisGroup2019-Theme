@@ -1,0 +1,26 @@
+.not-found-large {
+  font-size: 124px;
+  margin: 1rem 0 2rem 0;
+  &:after {
+    @include blue_underline;
+    margin: 0;
+  }
+}
+
+.not-found-body {
+  text-align: left;
+  margin-bottom: 3rem;
+}
+
+.not-found {
+  padding: 2rem 3rem;
+}
+
+.widget_categories.not-found {
+  display: flex;
+  padding: 0;
+  .not-found-sitemap {
+    padding-top: 1.5rem;
+    margin-left: 3rem;
+  }
+}

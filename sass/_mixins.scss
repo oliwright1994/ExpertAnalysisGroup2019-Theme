@@ -19,6 +19,7 @@
 @mixin right_arrow {
   content: " \203A";
   font-family: "Open Sans", arial, sans-serif;
+  margin-right: 0.5rem;
 }
 @mixin learn_more {
   color: $colour_brand_blue;

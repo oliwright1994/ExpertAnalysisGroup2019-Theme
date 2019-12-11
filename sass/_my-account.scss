@@ -1,0 +1,22 @@
+.woocommerce-account-container {
+  padding: 0 2rem;
+  display: flex;
+  .woocommerce-MyAccount-navigation {
+    flex: 30% 0;
+  }
+  .woocommerce-MyAccount-content {
+    padding: 1rem 2rem;
+    p {
+      text-align: left;
+      a {
+        color: $colour_brand_blue;
+      }
+    }
+  }
+}
+
+.woocommerce-MyAccount-navigation-link {
+  font-weight: normal;
+  font-size: 1.5rem;
+  line-height: 2em;
+}

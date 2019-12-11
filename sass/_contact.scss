@@ -5,15 +5,27 @@
   p {
     text-align: left;
   }
-  div {
+
+  .wpcf7-input-row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    margin: 1rem 0;
     label {
       display: flex;
       justify-content: center;
       flex-direction: column;
       text-align: left;
+      width: 45%;
+    }
+  }
+  .wpcf7-input-row-single {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+    label {
+      width: 100%;
     }
   }
 }
@@ -22,8 +34,60 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   margin: 0% 5%;
+  gap: 3rem;
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .wpcf7-textarea {
   width: 100%;
+}
+
+.wpcf7-form-control-wrap {
+  input {
+    width: 100%;
+  }
+}
+
+.wpcf7-form-control.wpcf7-submit.button {
+  width: auto;
+}
+
+.wpcf7[role="form"] {
+  border: 1px solid $colour_brand_blue;
+  padding: 2rem 0;
+}
+
+.contact-sidebar-aside {
+  padding-top: 3rem;
+  @media screen and (max-width: 900px) {
+    grid-row: 1;
+  }
+}
+
+.contact_info_widget_sidebar {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact-sidebar-aside {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-widget-address-body {
+  text-align: left;
+  line-height: 1.25em;
+}
+
+.contact-widget-email {
+  text-decoration: underline;
+}
+
+.contact-info-widget-title {
+  &:after {
+    @include blue_underline;
+  }
 }

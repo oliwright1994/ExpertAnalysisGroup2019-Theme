@@ -99,7 +99,7 @@ wc_print_notices()
 			<?php
 		} elseif ($product_in_cart){
 			?>
-			<p class="product-cta-message">This item is already in your cart. <a href="<?php echo wc_get_cart_url() ?>">View Cart.</a></p>
+			<p class="product-cta-message">This item is already in your cart. <a href="<?php echo wc_get_cart_url() ?>">View Cart</a> or <a href="<?php echo wc_get_checkout_url() ?>"> Checkout</a>.</p>
 			<?php
 		}
      else {
@@ -116,7 +116,7 @@ wc_print_notices()
 	 * @hooked woocommerce_upsell_display - 15
 	 * @hooked woocommerce_output_related_products - 20
 	 */
-	do_action( 'woocommerce_after_single_product_summary' );
+	// do_action( 'woocommerce_after_single_product_summary' );
 	?>
 </div>
 	</div>

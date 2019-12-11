@@ -1,4 +1,54 @@
 footer {
   background: $colour_brand_dark_blue;
   color: white;
+  margin-top: 5rem;
+  aside {
+    display: flex;
+    max-width: 900px;
+    justify-content: space-evenly;
+    padding: 5rem;
+    #contact_info_sidebar-3 {
+      h1 {
+        border-bottom: 2px solid white;
+        margin-top: 0;
+        &:after {
+          padding: 0;
+          border: unset;
+        }
+      }
+      h2 {
+        font-weight: bold;
+        font-size: 1rem;
+      }
+      a {
+        color: white;
+      }
+      p {
+        margin: 0;
+      }
+    }
+    section {
+      .widget-title {
+        display: inline;
+        font-size: 1rem;
+        border-bottom: 2px solid white;
+      }
+    }
+  }
+}
+
+.page_item {
+  a {
+    color: white;
+  }
+}
+.widget ul .current_page_item {
+  li {
+    margin: 0.5rem 0;
+  }
+  a {
+    &:before {
+      @include right_arrow;
+    }
+  }
 }

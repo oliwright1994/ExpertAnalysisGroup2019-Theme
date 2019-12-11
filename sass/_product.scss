@@ -2,6 +2,11 @@
   padding: 5% 0 5% 0;
   margin: 0 5%;
   border-bottom: 1px solid $colour_light_grey;
+  div {
+    h1 {
+      text-align: left;
+    }
+  }
 }
 
 .single-product-abstract,

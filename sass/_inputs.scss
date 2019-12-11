@@ -1,0 +1,62 @@
+input,
+textarea {
+  padding: 0.5rem 1rem;
+  font-size: $font_size_base;
+  color: $colour_text_black;
+  font-family: $font_main;
+  font-weight: $font_weight_light;
+  margin-top: 0.5rem;
+  border-color: $colour_light_grey;
+  border-style: solid;
+  border-width: 1px;
+  width: 100%;
+  &:focus {
+    border-color: $colour_brand_blue;
+    outline-style: none;
+    border-style: solid;
+  }
+  margin-bottom: 1rem;
+}
+
+select {
+  border-radius: 1px;
+  border-color: $colour_light_grey;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  padding: 0.5rem 1rem;
+  padding-right: 1.75rem;
+  font-family: $font_main;
+  font-size: $font_size_base;
+  font-weight: $font_weight_light;
+  color: $colour_text_black;
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(1em), calc(100% - 15px) calc(1em),
+    calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+  &:focus {
+    outline-style: none;
+  }
+}
+
+.selection .select2-selection--single {
+  border-radius: 1px;
+  padding: 0.25em 0;
+  height: auto;
+  margin-top: 0.5rem;
+  box-sizing: border-box;
+}
+#select2-billing_country-container {
+  border-radius: 1px;
+  font-family: $font_main;
+  font-size: $font_size_base;
+  font-weight: $font_weight_light;
+  color: $colour_text_black;
+  text-align: left;
+  padding: 0 1rem;
+}
+
+.select2-selection__arrow {
+  top: calc(50% - 8px) !important;
+}

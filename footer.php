@@ -15,9 +15,10 @@
 
 	<footer id="colophon" class="site-footer">
 	<aside id="secondary" class="widget-area">
-		<?php get_current_template(true);?>
+		<?php get_current_template(false);?>
 	<?php dynamic_sidebar( 'sidebar-footer' ); ?>
 	</aside><!-- #secondary -->
+	<p class="footer-regulation-info">Authorised & Regulated by the Financial Conduct Authority with Financial Services Register Number 480082.</p>
 	<?php wp_footer(); ?>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
