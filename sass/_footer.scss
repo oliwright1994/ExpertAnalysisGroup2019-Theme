@@ -4,9 +4,12 @@ footer {
   margin-top: 5rem;
   aside {
     display: flex;
-    max-width: 900px;
-    justify-content: space-evenly;
-    padding: 5rem;
+
+    justify-content: space-between;
+    @media screen and (max-width: 720px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
     #contact_info_sidebar-3 {
       h1 {
         border-bottom: 2px solid white;
@@ -28,6 +31,7 @@ footer {
       }
     }
     section {
+      margin-bottom: 3rem;
       .widget-title {
         display: inline;
         font-size: 1rem;
@@ -37,6 +41,9 @@ footer {
   }
 }
 
+.footer-regulation-info {
+  margin: 1rem auto;
+}
 .page_item {
   a {
     color: white;
@@ -51,4 +58,13 @@ footer {
       @include right_arrow;
     }
   }
+}
+
+.footer-layout-wrapper {
+  display: flex;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 5%;
+  flex-direction: column;
+  justify-content: center;
 }

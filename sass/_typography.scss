@@ -46,9 +46,18 @@
   font-style: normal;
 }
 
+html {
+  font-size: $font_size_base;
+  @media screen and (max-width: 480px) {
+    font-size: $font_size_small;
+  }
+}
 body {
   font-family: $font_main;
   font-size: $font_size_base;
   font-weight: $font_weight_light;
+  @media screen and (max-width: 480px) {
+    font-size: $font_size_small;
+  }
   color: $colour_text_black;
 }

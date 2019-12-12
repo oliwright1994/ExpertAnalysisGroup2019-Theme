@@ -14,12 +14,17 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
+		<div class="footer-layout-wrapper">
+	<a href="<?php echo get_home_url() ?>" class="site-logo">
+		<?php echo file_get_contents(get_template_directory_uri()."/assets/svg/EAG_logo.svg"); ?>
+		</a>
 	<aside id="secondary" class="widget-area">
 		<?php get_current_template(false);?>
 	<?php dynamic_sidebar( 'sidebar-footer' ); ?>
 	</aside><!-- #secondary -->
 	<p class="footer-regulation-info">Authorised & Regulated by the Financial Conduct Authority with Financial Services Register Number 480082.</p>
 	<?php wp_footer(); ?>
+	</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
