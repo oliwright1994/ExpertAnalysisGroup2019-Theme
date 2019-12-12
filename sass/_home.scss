@@ -27,6 +27,8 @@
   align-items: center;
   max-width: 900px;
   margin: 6rem auto;
+  padding: 5%;
+  padding-top: 0;
   h1,
   p {
     text-align: center;
@@ -106,7 +108,7 @@
   p {
     @include text_body;
     max-width: 900px;
-    margin: 4rem 0;
+    margin: 4rem 5%;
   }
   .learn-more {
     margin-top: 2rem;
@@ -125,7 +127,7 @@
     }
   }
   & > p {
-    margin: 0 auto 4rem auto;
+    margin: 0 5% 4rem 5%;
   }
 }
 

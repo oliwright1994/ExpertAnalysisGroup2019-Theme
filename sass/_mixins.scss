@@ -4,11 +4,11 @@
   margin: 0 auto;
   padding-top: 30px;
   border-bottom: 2px solid $colour_brand_blue;
-  width: 2em;
+  width: 5em;
 }
 
 @mixin text_body {
-  line-height: 2em;
+  line-height: 1.7em;
   text-align: center;
 }
 @mixin text_heading {

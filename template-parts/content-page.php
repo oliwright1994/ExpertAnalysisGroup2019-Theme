@@ -20,12 +20,47 @@
 	<div class="entry-content">
 		<?php
 		the_content();
-
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'expertanalysisgroup2019' ),
-			'after'  => '</div>',
-		) );
-		?>
+		$all_fields = get_field_objects();
+		$first_section = $all_fields['first_section']['value'];
+		$second_section = $all_fields['second_section']['value'];
+		$tagline_section = $all_fields['tagline_section']['value'];
+		if($first_section['title'] && $first_section['text'] ): ?>
+		<section class="first-section <?php if($first_section['layout'] === 'Horizontal') {echo 'layout-horizontal';}?>">
+			<?php if($first_section['layout'] === 'Horizontal') {
+				echo '<div class="section-text-vertical">';
+			}
+			?>
+			<h2 class="section-title blue-underline">
+				<?php echo $first_section['title']?>
+			</h2>
+			<p class="section-text"><?php echo $first_section['text']?></p>
+			<?php if($first_section['layout'] === 'Horizontal') {
+				echo '</div>';
+			}
+			?>
+			<div style="background-image:  url('<?php echo wp_get_attachment_url($first_section['image']) ?>')" class="page-first-section-image"/>
+		</section>
+		<?php
+		endif;
+		if($second_section['title'] && $second_section['text'] ): ?>
+		<section class="second-section" style="background-image:  url('<?php echo wp_get_attachment_url($second_section['background_image']) ?>')">
+			<div class="second-section-text-wrapper">
+			<h2 class="section-title blue-underline">
+				<?php echo $second_section['title']?>
+			</h2>
+			<p class="section-text"><?php echo $second_section['text']?></p>
+			</div>
+		</section>
+		<?php endif;
+		if(	$tagline_section ): ?>
+			<section class="tagline-section">
+				<h2 class="section-tagline blue-underline">
+					<?php echo $tagline_section ?>
+				</h2>
+			</section>
+			<?php
+		endif;
+?>
 	</div><!-- .entry-content -->
 
 	<?php if ( get_edit_post_link() ) : ?>

@@ -91,3 +91,12 @@
     @include blue_underline;
   }
 }
+
+span.wpcf7-not-valid-tip {
+  color: $colour_red;
+}
+
+div.wpcf7-validation-errors,
+div.wpcf7-acceptance-missing {
+  border-color: $colour_red;
+}
