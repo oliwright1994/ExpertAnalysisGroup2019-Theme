@@ -158,7 +158,8 @@
       top: 0;
       bottom: 0;
       background: rgb(0, 0, 0);
-      opacity: 0.2;
+      opacity: 0.3;
+      transition: all 0.2s;
     }
     &:hover {
       & > p {
@@ -167,7 +168,7 @@
         text-decoration: none;
       }
       &:after {
-        opacity: 0.3;
+        opacity: 0.1;
       }
     }
     h3 {

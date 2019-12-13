@@ -26,9 +26,11 @@ get_header( 'shop' );
  * @hooked WC_Structured_Data::generate_website_data() - 30
  */
 // do_action( 'woocommerce_before_main_content' );
-woocommerce_output_content_wrapper()
+woocommerce_output_content_wrapper();
+get_template_part( 'template-parts/content', 'page-banner' );
 
 ?>
+
 <div class="shop-layout-sidebar">
 <div class="shop-layout-sidebar-aside">
 	<?php

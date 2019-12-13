@@ -61,3 +61,14 @@
     color: $colour_brand_blue;
   }
 }
+
+.product_title.entry-title {
+  margin: 0 0 1.5rem 0;
+  font-weight: $font_weight_medium;
+  font-size: 1.8rem;
+}
+
+.shop-product-loop-read-more:after {
+  @include right_arrow;
+  font-size: 1em;
+}

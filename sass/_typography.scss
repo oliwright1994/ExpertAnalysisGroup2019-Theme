@@ -48,7 +48,7 @@
 
 html {
   font-size: $font_size_base;
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 600px) {
     font-size: $font_size_small;
   }
 }
@@ -60,4 +60,8 @@ body {
     font-size: $font_size_small;
   }
   color: $colour_text_black;
+}
+
+h1 {
+  font-size: 2.5rem;
 }

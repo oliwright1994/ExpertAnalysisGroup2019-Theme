@@ -1,6 +1,7 @@
 a {
   color: $colour_text_black;
   text-decoration: none;
+  transition: all 5s;
   &:hover {
     text-decoration: underline;
   }

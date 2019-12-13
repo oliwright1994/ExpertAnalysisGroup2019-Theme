@@ -42,6 +42,23 @@
 
 #page-cart {
   margin-bottom: 4rem;
+  margin: 0 auto;
+}
+
+.woocommerce-message {
+  text-align: center;
+  display: flex;
+  margin: 2rem auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.woocommerce-cart-form,
+.cart-collaterals {
   max-width: 900px;
   margin: 0 auto;
+}
+
+.restore-item {
+  color: $colour_brand_blue;
 }

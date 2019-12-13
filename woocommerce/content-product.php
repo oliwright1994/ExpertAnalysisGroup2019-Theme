@@ -69,18 +69,13 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 		<div class="single-product-meta-wrapper">
 			<div class="single-product-author-wrapper">
 		<?php
-		if($author){
-			?>
+		if($author): ?>
 		<p class="single-product-author"><?php echo $author?></p>
-		<?php
-		}
-		?>
-		<?php
-		if($institution){
-			?>
-		<p class="single-product-institution"><?php echo $institution;?></p>
-		<?php
-		}
+		<?php endif;
+		if($institution): ?>
+			<p class="single-product-institution"><?php echo $institution;?></p>
+		<?php endif;
+		echo the_date("d/m/Y", '<p class="single-product-date">', '</p>');
 		echo '</div>';
 		woocommerce_template_single_meta();
 		?>

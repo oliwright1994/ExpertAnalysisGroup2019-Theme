@@ -39,3 +39,19 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.single-product-author-wrapper {
+  margin-right: 3rem;
+  .single-product-institution,
+  .single-product-author,
+  .single-product-date {
+    color: lighten($colour_text_black, 10%);
+  }
+}
+
+.products.columns-4 {
+  margin-top: 0;
+  li:first-child {
+    padding-top: 0;
+  }
+}

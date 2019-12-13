@@ -122,3 +122,21 @@
     }
   }
 }
+
+.page-hero-banner-image {
+  height: 75vh;
+  background-size: cover;
+  .hero-header {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(53, 53, 53, 0.25);
+    h1 {
+      text-transform: uppercase;
+      color: white;
+      @include text_shadow_base;
+    }
+  }
+}

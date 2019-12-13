@@ -10,13 +10,19 @@
 
 ?>
 <?php $slug = get_post_field( 'post_name', get_post() );
+			$banner_style = strtolower(get_field('banner_style'));
+
 ?>
 <article id="page-<?php echo $slug; ?>" <?php post_class(); ?>>
+<?php if ($banner_style === 'hero'):
+	get_template_part( 'template-parts/content', 'page-hero-banner' );
+	else:
+	get_template_part( 'template-parts/content', 'page-banner' );
+	?>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title blue-underline">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
-
-	<?php expertanalysisgroup2019_post_thumbnail(); ?>
+	<?php endif; ?>
 
 	<div class="entry-content">
 		<?php
@@ -24,6 +30,7 @@
 		// print_r(get_field_objects());
 		// echo '</pre>';
 		$all_fields = get_field_objects();
+		unset($all_fields['banner_style']);
 		unset($all_fields['banner_image']);
 		foreach($all_fields as $section){
 			$title = $section['value']['title'];
@@ -33,8 +40,12 @@
 			?>
 			<div class="service-section-container">
 				<div class="service-section-text-wrapper">
-					<h2 class="service-section-title blue-underline"> <?php echo $section['value']['title'] ?></h2>
-					<p class="service-section-text"> <?php echo $section['value']['text'] ?></p>
+					<h2 class="service-section-title blue-underline">
+						<?php echo $section['value']['title'] ?>
+					</h2>
+					<p class="service-section-text">
+						<?php echo $section['value']['text'] ?>
+					</p>
 				</div>
 				<?php
 				if($image) {

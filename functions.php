@@ -187,3 +187,8 @@ function eag_add_woocommerce_support() {
 }
 add_action( 'after_setup_theme', 'eag_add_woocommerce_support' );
 
+/**
+ * Remove Wordpress version number
+ * */
+
+ add_filter('the_generator', '__return_null');

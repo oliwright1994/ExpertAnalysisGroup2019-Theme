@@ -9,21 +9,26 @@
 
 ?>
 <?php $slug = get_post_field( 'post_name', get_post() );
+			$banner_style = strtolower(get_field('banner_style'));
 ?>
 <article id="page-<?php echo $slug; ?>" <?php post_class(); ?>>
+<?php if ($banner_style === 'hero'):
+	get_template_part( 'template-parts/content', 'page-hero-banner' );
+	else:
+	get_template_part( 'template-parts/content', 'page-banner' );
+	?>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title blue-underline">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
-
+	<?php endif; ?>
 	<?php expertanalysisgroup2019_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
 		the_content();
-		$all_fields = get_field_objects();
-		$first_section = $all_fields['first_section']['value'];
-		$second_section = $all_fields['second_section']['value'];
-		$tagline_section = $all_fields['tagline_section']['value'];
+		$first_section = get_field('first_section');
+		$second_section = get_field('second_section');
+		$tagline_section = get_field('tagline_section');
 		if($first_section['title'] && $first_section['text'] ): ?>
 		<section class="first-section <?php if($first_section['layout'] === 'Horizontal') {echo 'layout-horizontal';}?>">
 			<?php if($first_section['layout'] === 'Horizontal') {
