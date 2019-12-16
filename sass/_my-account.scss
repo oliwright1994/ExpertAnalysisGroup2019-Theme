@@ -6,6 +6,7 @@
   }
   .woocommerce-MyAccount-content {
     padding: 1rem 2rem;
+    flex: 1 1 100%;
     p {
       text-align: left;
       a {
@@ -19,4 +20,28 @@
   font-weight: normal;
   font-size: 1.5rem;
   line-height: 2em;
+}
+
+.woocommerce-orders-table {
+  width: 100%;
+  text-align: left;
+  border-spacing: 1rem;
+}
+
+.woocommerce-order-downloads {
+  .woocommerce-table--order-downloads {
+    width: 100%;
+    text-align: left;
+    border-spacing: 1rem;
+  }
+  .download-product {
+    a {
+      color: $colour_text_black;
+    }
+  }
+}
+
+mark {
+  color: $colour_red;
+  background: unset;
 }

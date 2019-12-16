@@ -16,8 +16,12 @@
   #site-navigation {
     font-size: 1rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 0 2% 0 2%;
+    .site-branding {
+      justify-self: flex-start;
+      margin-right: auto;
+    }
     .site-logo {
       color: $colour_brand_blue;
       font-size: 1.5rem;
@@ -62,9 +66,37 @@
   }
 }
 
+#site-navigation {
+  .aws-wrapper {
+    .aws-search-field {
+      border: none;
+      border-bottom: 2px $colour_brand_blue solid;
+      height: 3em;
+    }
+  }
+  .aws-search-btn {
+    display: none;
+  }
+  .aws-container {
+    display: none;
+  }
+}
+
+.search-button-toggle {
+  font-size: 1.25rem;
+  margin: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  color: $colour_text_black;
+  font-weight: 500;
+}
+
 #masthead.site-header-static {
   background: transparent;
   border: none;
+
   #site-navigation {
     .site-logo {
       svg {
@@ -82,35 +114,31 @@
       color: white;
     }
   }
-}
-
-#site-navigation {
-  .aws-wrapper {
-    .aws-search-field {
-      border: none;
-      border-bottom: 2px $colour_brand_blue solid;
-      height: 3em;
+  .aws-search-field {
+    background: transparent;
+    color: white;
+    border-color: white;
+    &::placeholder {
+      color: white;
     }
   }
-  .aws-search-btn {
-    display: none;
+  .search-button-toggle {
+    color: white;
   }
 }
 
-.aws-container {
-  overflow: hidden;
-  height: 100%;
-  aws-search-form {
-    display: none;
+#nav-primary {
+  position: relative;
+  margin-right: 0.5em;
+  &:after {
+    content: "";
+    height: 120%; //You can change this if you want smaller/bigger borders
+    width: 1px;
+
+    position: absolute;
+    right: 0;
+    top: -10%; // If you want to set a smaller height and center it, change this value
+
+    background-color: $colour_light_grey; // The color of your border
   }
-}
-
-.search-button-toggle {
-  font-size: 1.5rem;
-  margin: 0;
-  z-index: 50;
-
-  padding: 0 0.5rem;
-  color: $colour_text_black;
-  font-weight: 500;
 }

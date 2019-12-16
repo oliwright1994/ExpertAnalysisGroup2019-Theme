@@ -8,6 +8,10 @@ form[name="checkout"] {
     display: flex;
     flex-direction: column;
   }
+  .woocommerce-NoticeGroup-checkout {
+    grid-column: 1 / span 2;
+    color: $colour_red;
+  }
 }
 @media screen and (max-width: 900px) {
   form[name="checkout"] {
@@ -58,4 +62,10 @@ form[name="checkout"] {
 
 #order_review_heading {
   font-size: 1.5em;
+}
+
+.payment_method_paypal {
+  img {
+    margin-bottom: 2rem;
+  }
 }
