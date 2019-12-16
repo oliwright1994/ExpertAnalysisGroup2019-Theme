@@ -83,3 +83,34 @@
     }
   }
 }
+
+#site-navigation {
+  .aws-wrapper {
+    .aws-search-field {
+      border: none;
+      border-bottom: 2px $colour_brand_blue solid;
+      height: 3em;
+    }
+  }
+  .aws-search-btn {
+    display: none;
+  }
+}
+
+.aws-container {
+  overflow: hidden;
+  height: 100%;
+  aws-search-form {
+    display: none;
+  }
+}
+
+.search-button-toggle {
+  font-size: 1.5rem;
+  margin: 0;
+  z-index: 50;
+
+  padding: 0 0.5rem;
+  color: $colour_text_black;
+  font-weight: 500;
+}

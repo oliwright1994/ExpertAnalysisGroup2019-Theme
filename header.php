@@ -56,6 +56,13 @@
 				'menu_id'        => 'nav-primary',
 			) );
 			?>
+				<?php
+			echo do_shortcode( '[aws_search_form]' );
+			?>
+			<p class="search-button-toggle">
+			<i class="fas fa-search"></i>
+			</p>
+
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

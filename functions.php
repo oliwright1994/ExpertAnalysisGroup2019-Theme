@@ -140,9 +140,17 @@ add_action( 'widgets_init', 'expertanalysisgroup2019_widgets_init' );
 function expertanalysisgroup2019_scripts() {
 	wp_enqueue_style( 'expertanalysisgroup2019-style', get_template_directory_uri().'/css/main.css' );
 
+	wp_enqueue_style(
+		'inhabitents-fontawesome',
+		"https://use.fontawesome.com/releases/v5.8.2/css/all.css",
+		array()
+	);
+
 	wp_enqueue_script( 'expertanalysisgroup2019-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'expertanalysisgroup2019-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'expertanalysisgroup2019-header-search-toggle', get_template_directory_uri() . '/js/header-search-toggle.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'expertanalysisgroup2019-header-toggle-styling', get_template_directory_uri() . '/js/toggle-header-styling.js', array(), '20151215', true );
 
