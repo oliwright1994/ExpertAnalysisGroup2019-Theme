@@ -1,7 +1,6 @@
 a {
-  color: $colour_text_black;
+  color: $colour_brand_blue;
   text-decoration: none;
-  transition: all 5s;
   &:hover {
     text-decoration: underline;
   }
@@ -21,5 +20,16 @@ ul {
 .blue-underline {
   &:after {
     @include blue_underline;
+  }
+}
+
+.woocommerce-Message {
+  a {
+    color: $colour_brand_blue;
+    text-transform: capitalize;
+    padding: 0;
+    text-decoration: underline;
+    background: white;
+    font-size: 1em;
   }
 }
