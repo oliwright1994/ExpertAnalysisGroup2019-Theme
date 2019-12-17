@@ -1,57 +1,99 @@
+#shop-sidebar-toggle {
+  position: sticky;
+  background: white;
+  background-size: cover;
+  top: calc(10vh);
+  left: 0;
+  width: 100vw;
+  font-size: 1rem;
+  border-bottom: 1px solid $colour_light_grey;
+  z-index: 49;
+  transition: all 0.5s;
+  padding: 1rem;
+  @media screen and (min-width: 720px) {
+    display: none;
+  }
+  p {
+    margin: 0;
+  }
+}
 .shop-layout-sidebar {
   display: grid;
   grid-template-columns: 1fr 3fr;
+  @media screen and (max-width: 720px) {
+    grid-template-columns: 1fr;
+    position: relative;
+  }
   .shop-sidebar-main {
     padding-right: 5%;
-  }
-  .shop-layout-sidebar-aside {
-    margin: 1rem;
-  }
-}
-.type-product {
-  list-style-type: none;
-}
-
-.widget_product_categories {
-  margin-top: 3rem;
-  .widget-title {
-    font-size: 18px;
-  }
-}
-.product-categories {
-  padding-inline-start: 1rem;
-  li {
-    list-style-type: none;
-    margin: 0.5rem 0;
-    a {
-      font-size: 14px;
+    @media screen and (max-width: 720px) {
+      grid-area: 1 / span 2;
+      padding: 5%;
     }
   }
-}
 
-.woocommerce-products-header {
-  text-align: center;
-  font-size: 28px;
-  margin: 2rem;
-}
-
-.woocommerce-ordering {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.single-product-author-wrapper {
-  margin-right: 3rem;
-  .single-product-institution,
-  .single-product-author,
-  .single-product-date {
-    color: lighten($colour_text_black, 10%);
+  .shop-layout-sidebar-aside {
+    margin: 1rem;
+    @media screen and (max-width: 720px) {
+      position: fixed;
+      left: 0;
+      top: 0;
+      transform: translateX(-100vw);
+      transition: 0.5s;
+      background: white;
+      z-index: 100;
+      width: 60vw;
+      margin: 0;
+      height: 100vh;
+      padding: 5%;
+      border-right: 1px solid $colour_light_grey;
+    }
   }
-}
+  .type-product {
+    list-style-type: none;
+  }
 
-.products.columns-4 {
-  margin-top: 0;
-  li:first-child {
-    padding-top: 0;
+  .widget_product_categories {
+    margin-top: 3rem;
+    .widget-title {
+      font-size: 18px;
+    }
+  }
+  .product-categories {
+    padding-inline-start: 1rem;
+    li {
+      list-style-type: none;
+      margin: 0.5rem 0;
+      a {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .woocommerce-products-header {
+    text-align: center;
+    font-size: 28px;
+    margin: 2rem;
+  }
+
+  .woocommerce-ordering {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .single-product-author-wrapper {
+    margin-right: 3rem;
+    .single-product-institution,
+    .single-product-author,
+    .single-product-date {
+      color: lighten($colour_text_black, 10%);
+    }
+  }
+
+  .products.columns-4 {
+    margin-top: 0;
+    li:first-child {
+      padding-top: 0;
+    }
   }
 }

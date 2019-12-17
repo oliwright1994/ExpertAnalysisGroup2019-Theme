@@ -18,6 +18,10 @@
     fill: $colour_red;
     height: 18px;
     width: 18px;
+    svg {
+      height: inherit;
+      width: inherit;
+    }
   }
 }
 

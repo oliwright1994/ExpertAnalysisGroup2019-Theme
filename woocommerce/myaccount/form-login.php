@@ -29,9 +29,12 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 <?php endif; ?>
 
-		<h2><?php esc_html_e( 'Login', 'woocommerce' ); ?></h2>
 
-		<form class="woocommerce-form woocommerce-form-login login" method="post">
+<form class="woocommerce-form woocommerce-form-login login" method="post">
+	<div class="login-register-form-heading">
+<h2><?php esc_html_e( 'Login', 'woocommerce' ); ?></h2>
+<a href="<?php echo  get_permalink( get_page_by_path( 'map' ) ) ?>"> or Sign Up for an account </a>
+	</div>
 
 			<?php do_action( 'woocommerce_login_form_start' ); ?>
 

@@ -23,8 +23,15 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'expertanalysisgroup2019' ); ?></a>
-
+	<div id="screen-overlay"></div>
 	<header id="masthead" class="site-header">
+	<div class="site-branding">
+		<!-- Include hard coded site logo to support css color properties -->
+		<a href="<?php echo get_home_url() ?>" class="site-logo">
+		<?php echo file_get_contents(get_template_directory_uri()."/assets/svg/EAG_logo.svg"); ?>
+		</a>
+		</div>
+		<div class="topbar-menu-items">
 		<div id="nav-secondary">
 		<?php
 		$cart_count = WC()->cart->get_cart_contents_count();
@@ -42,13 +49,7 @@
 		 <a class="contact-nav-link" href="<?php echo get_permalink(get_page_by_path( 'contact' ))?>">Contact</a>
 		</div>
 
-	<nav id="site-navigation" class="main-navigation">
-		<div class="site-branding">
-		<!-- Include hard coded site logo to support css color properties -->
-		<a href="<?php echo get_home_url() ?>" class="site-logo">
-		<?php echo file_get_contents(get_template_directory_uri()."/assets/svg/EAG_logo.svg"); ?>
-		</a>
-		</div><!-- .site-branding -->
+	<nav id="site-navigation" class="main-navigation"><!-- .site-branding -->
 					<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'expertanalysisgroup2019' ); ?></button> -->
 			<?php
 			wp_nav_menu( array(
@@ -64,6 +65,10 @@
 			</p>
 
 		</nav><!-- #site-navigation -->
+		</div>
+		<div class="header-menu-button">
+		<i class="fas fa-bars"></i>
+		</div>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

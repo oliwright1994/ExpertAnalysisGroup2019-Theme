@@ -18,6 +18,9 @@
       color: white;
       font-size: 3rem;
       text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+      @media screen and (max-width: 720px) {
+        font-size: 2rem;
+      }
     }
   }
 }
@@ -184,6 +187,9 @@
   .single-report-category-wrapper {
     background-size: cover;
     min-height: 300px;
+    @media screen and (max-width: 720px) {
+      min-height: 150px;
+    }
     min-width: 300px;
     margin: 0;
     display: flex;

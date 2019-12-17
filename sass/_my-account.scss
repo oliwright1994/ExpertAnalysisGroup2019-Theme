@@ -45,3 +45,30 @@ mark {
   color: $colour_red;
   background: unset;
 }
+
+#customer_login,
+.woocommerce-form-login {
+  padding: 0 5%;
+  max-width: 720px;
+  margin: auto;
+}
+
+.woocommerce-form-login__rememberme {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  input {
+    width: unset;
+  }
+}
+
+.login-register-form-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  a:after {
+    @include right_arrow;
+  }
+}

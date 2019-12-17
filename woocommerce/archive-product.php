@@ -30,7 +30,7 @@ woocommerce_output_content_wrapper();
 get_template_part( 'template-parts/content', 'page-banner' );
 
 ?>
-
+<div id="shop-sidebar-toggle">Categories <i class="fas fa-chevron-right"></i></div>
 <div class="shop-layout-sidebar">
 <div class="shop-layout-sidebar-aside">
 	<?php
@@ -38,6 +38,7 @@ woocommerce_breadcrumb();
 do_action( 'woocommerce_sidebar' );
 ?>
 </div>
+
 	<div class="shop-sidebar-main">
 <header class="woocommerce-products-header">
 	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
@@ -98,8 +99,9 @@ if ( woocommerce_product_loop() ) {
 	 */
 	do_action( 'woocommerce_no_products_found' );
 }
-
 echo '</div>';
+echo '</div>';
+echo '<div id="screen-overlay"></div>';
 // shop-sidebar-main
 /**
  * Hook: woocommerce_sidebar.
@@ -112,9 +114,9 @@ echo '</div>';
  * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
  */
 do_action( 'woocommerce_after_main_content' );
-
 ?>
 </div>
+
 <?php
 get_footer( 'shop' );
 ?>

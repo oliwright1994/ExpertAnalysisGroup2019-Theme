@@ -1,27 +1,34 @@
 #masthead {
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   width: 100vw;
   height: 10vh;
-  padding-bottom: 10px;
   border-bottom: 1px solid rgba(200, 200, 200, 0.5);
   position: fixed;
-  padding-top: 10px;
+  padding-left: 20px;
   top: 0;
   z-index: 50;
   background: white;
   transition: all 0.5s;
+  .topbar-menu-items {
+    flex: 1 1 100%;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 10px;
+  }
   #site-navigation {
     font-size: 1rem;
     display: flex;
     justify-content: flex-end;
     padding: 0 2% 0 2%;
-    .site-branding {
-      justify-self: flex-start;
-      margin-right: auto;
-    }
+  }
+  .site-branding {
+    margin-top: 18px;
+
     .site-logo {
       color: $colour_brand_blue;
       font-size: 1.5rem;
@@ -40,7 +47,6 @@
     }
   }
 }
-
 #nav-secondary {
   padding: 0 2% 0 2%;
   font-size: 14px;
@@ -84,20 +90,22 @@
 
 .search-button-toggle {
   font-size: 1.25rem;
-  margin: 0;
+  margin: 6px 0 0 0;
   z-index: 50;
   display: flex;
   align-items: center;
   padding: 0 0.5rem;
   color: $colour_text_black;
   font-weight: 500;
+  width: 32px;
+  height: 32px;
 }
 
 #masthead.site-header-static {
   background: transparent;
   border: none;
 
-  #site-navigation {
+  .site-branding {
     .site-logo {
       svg {
         path,
@@ -107,6 +115,7 @@
       }
     }
   }
+
   div {
     a {
       // font-weight: $font_weight_medium;
@@ -140,5 +149,95 @@
     top: -10%; // If you want to set a smaller height and center it, change this value
 
     background-color: $colour_light_grey; // The color of your border
+  }
+}
+
+#screen-overlay {
+  position: fixed;
+  z-index: 50;
+  margin: 0;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(50, 50, 50, 0.5);
+  display: none;
+}
+
+.header-menu-button {
+  position: fixed;
+  right: 2rem;
+  top: 5vh;
+  font-size: 2rem;
+  transform: translateY(-50%);
+  display: none;
+  @media screen and (max-width: 900px) {
+    display: block;
+  }
+}
+
+.site-header-static {
+  .header-menu-button {
+    color: white;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #masthead {
+    .topbar-menu-items {
+      #nav-secondary {
+        a {
+          margin: 0.5rem 0;
+          color: $colour_brand_blue;
+          text-shadow: none;
+        }
+      }
+    }
+  }
+  .topbar-menu-items {
+    transition: all 0.5s;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: white;
+    padding: 5% 0 5% 5%;
+    z-index: 100;
+    transform: translateX(100vw);
+    border-left: 1px solid $colour_light_grey;
+    #nav-secondary,
+    #site-navigation {
+      flex-direction: column;
+      align-items: flex-start;
+      .aws-container {
+        display: block;
+        margin-top: 1.5rem;
+        margin-right: 20px;
+        .aws-search-field {
+          color: $colour_brand_blue;
+          border-color: $colour_brand_blue;
+          &::placeholder {
+            color: $colour_light_grey;
+          }
+        }
+      }
+      .search-button-toggle {
+        display: none;
+      }
+    }
+    #nav-primary {
+      li {
+        margin: 0.5rem 0;
+        a {
+          color: $colour_text_black;
+          text-shadow: none;
+        }
+      }
+    }
+    #nav-primary:after {
+      display: none;
+    }
+    .menu {
+      flex-direction: column;
+    }
   }
 }
