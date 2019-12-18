@@ -187,8 +187,8 @@
   .single-report-category-wrapper {
     background-size: cover;
     min-height: 300px;
-    @media screen and (max-width: 720px) {
-      min-height: 150px;
+    @media screen and (max-width: 600px) {
+      min-height: 175px;
     }
     min-width: 300px;
     margin: 0;
@@ -197,8 +197,8 @@
     align-items: center;
     justify-content: center;
     flex: 1 1 25vw;
-    @media screen and (min-width: 992px) and (max-width: 1200px) {
-      flex: 1 1 50vw;
+    @media screen and (min-width: 1200px) {
+      flex: 1 1 32vw;
     }
     text-decoration: none;
     position: relative;

@@ -58,12 +58,13 @@
 			) );
 			?>
 				<?php
+			if ( function_exists( 'aws_get_search_form' ) ):
 			echo do_shortcode( '[aws_search_form]' );
 			?>
 			<p class="search-button-toggle">
 			<i class="fas fa-search"></i>
 			</p>
-
+			<?php endif;?>
 		</nav><!-- #site-navigation -->
 		</div>
 		<div class="header-menu-button">

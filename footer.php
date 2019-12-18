@@ -8,9 +8,7 @@
  *
  * @package ExpertAnalysisGroup2019
  */
-
 ?>
-
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">

@@ -16,7 +16,14 @@
  */
 
 defined( 'ABSPATH' ) || exit;
+$user_logged_in = is_user_logged_in();
+$user = wp_get_current_user();
+$roles = ( array ) $user->roles;
 ?>
+<?php if ($user_logged_in && in_array('customer',$roles)) {?>
+		<p class="my-account-pending-account-message">Thank you for registering. Your account is currently being processed. You may browse our <a href="<?php echo  get_permalink( get_page_by_path( 'reports' ) )?>">reports</a> and ammend your details from <a href="<?php echo  get_permalink( get_page_by_path( 'my-account' ) )?>">your account</a> page, but you will not be able to complete your checkout until your account has been processed and approved.</p>
+<?php
+}?>
 <div class="woocommerce-account-container">
 <?php
 /**

@@ -7,7 +7,7 @@
   height: 10vh;
   border-bottom: 1px solid rgba(200, 200, 200, 0.5);
   position: fixed;
-  padding-left: 20px;
+  padding-left: 5%;
   top: 0;
   z-index: 50;
   background: white;
@@ -166,7 +166,7 @@
 
 .header-menu-button {
   position: fixed;
-  right: 2rem;
+  right: 5%;
   top: 5vh;
   font-size: 2rem;
   transform: translateY(-50%);
@@ -215,6 +215,7 @@
         .aws-search-field {
           color: $colour_brand_blue;
           border-color: $colour_brand_blue;
+          font-size: 1rem;
           &::placeholder {
             color: $colour_light_grey;
           }
@@ -232,6 +233,11 @@
           text-shadow: none;
         }
       }
+    }
+    #nav-secondary,
+    #nav-primary {
+      margin: 2rem 0;
+      font-size: 1rem;
     }
     #nav-primary:after {
       display: none;

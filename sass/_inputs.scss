@@ -60,3 +60,7 @@ select {
 .select2-selection__arrow {
   top: calc(50% - 8px) !important;
 }
+
+select {
+  border: 1px solid $colour_light_grey;
+}

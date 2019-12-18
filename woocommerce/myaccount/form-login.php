@@ -33,7 +33,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 <form class="woocommerce-form woocommerce-form-login login" method="post">
 	<div class="login-register-form-heading">
 <h2><?php esc_html_e( 'Login', 'woocommerce' ); ?></h2>
-<a href="<?php echo  get_permalink( get_page_by_path( 'map' ) ) ?>"> or Sign Up for an account </a>
+<a href="<?php echo  get_permalink( get_page_by_path( 'register' ) ) ?>"> or register for an account </a>
 	</div>
 
 			<?php do_action( 'woocommerce_login_form_start' ); ?>

@@ -69,3 +69,8 @@ form[name="checkout"] {
     margin-bottom: 2rem;
   }
 }
+
+[class*="-pending-account-message"] {
+  max-width: 600px;
+  margin: 0 auto 1rem auto;
+}
