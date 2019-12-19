@@ -87,6 +87,7 @@
 }
 
 .contact-info-widget-title {
+  font-size: 1.5rem;
   &:after {
     @include blue_underline;
   }

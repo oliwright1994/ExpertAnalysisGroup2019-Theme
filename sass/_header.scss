@@ -31,11 +31,13 @@
 
     .site-logo {
       color: $colour_brand_blue;
-      font-size: 1.5rem;
       &:hover {
         text-decoration: none;
       }
       svg {
+        @media screen and (max-width: 720px) {
+          width: 200px;
+        }
         path,
         rect {
           fill: $colour_brand_blue;
@@ -200,7 +202,7 @@
     right: 0;
     top: 0;
     background: white;
-    padding: 5% 0 5% 5%;
+    padding: 5% 5% 5% 5%;
     z-index: 100;
     transform: translateX(100vw);
     border-left: 1px solid $colour_light_grey;
@@ -211,11 +213,11 @@
       .aws-container {
         display: block;
         margin-top: 1.5rem;
-        margin-right: 20px;
         .aws-search-field {
           color: $colour_brand_blue;
           border-color: $colour_brand_blue;
           font-size: 1rem;
+          padding-right: unset;
           &::placeholder {
             color: $colour_light_grey;
           }
