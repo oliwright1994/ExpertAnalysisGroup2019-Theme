@@ -57,6 +57,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	// do_action( 'woocommerce_after_shop_loop_item_title' );
 	?>
 	<?php
+			$abstract = $product->get_short_description();
 		$author = $product->get_meta('eag_author');
 		$institution = $product->get_meta('eag_institution');
 	?>
@@ -64,7 +65,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
 	<div class="summary entry-summary">
 		<h2 class="single-product-title"><?php woocommerce_template_single_title(); ?></h2>
-		<p class="single-product-abstract <?php echo $product->get_short_description() ?'' :"missing-meta" ?>"><?php echo ($abstract)?$abstract :"There is no description for this report yet." ?></p>
+		<p class="single-product-abstract <?php echo ($abstract)?'' :"missing-meta" ?>"><?php echo ($abstract)?$abstract :"There is no description for this report yet." ?></p>
 		<div class="single-product-meta-wrapper">
 			<div class="single-product-author-wrapper">
 		<?php
