@@ -70,6 +70,7 @@ _WooCommerce > Settings > Downloads > tick Downloads Require Login_
 - Polish and test mobile menus and responsiveness
 - Style My Account pages layout
 - Configure WC store set-up and test payment gateways
+- Configure Contact Form 7 on to send emails
 
 #### Contributors:
 
